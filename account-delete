@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Your Vibe Reader Account</title>
+</head>
+<body>
+
+<p>If you would like to delete your Vibe Reader account and all associated personal data, please follow the steps below.</p>
+
+<hr>
+
+<h2>How to delete your account</h2>
+
+<h3>Option 1: In the app</h3>
+
+<ol>
+  <li>Open the <strong>Vibe Reader</strong> app.</li>
+  <li>Go to <strong>Settings → Account → Delete Account</strong>.</li>
+  <li>Confirm your request when prompted.</li>
+</ol>
+
+<p>Your account and data will be scheduled for deletion immediately.</p>
+
+<hr>
+
+<h2>What data will be deleted</h2>
+
+<p>When you delete your account, the following data will be <strong>permanently removed</strong> from our systems:</p>
+
+<ul>
+  <li>Email address and profile information</li>
+  <li>Saved articles, highlights, and reading history</li>
+  <li>AI-generated summaries and preferences</li>
+  <li>Subscription status and plan details</li>
+</ul>
+
+<hr>
+
+<h2>Data we may retain temporarily</h2>
+
+<p>For legal, security, or billing compliance purposes, certain data may be retained for a limited period after account deletion:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data type</th>
+      <th>Retention period</th>
+      <th>Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Payment and transaction records</td>
+      <td>Up to 180 days</td>
+      <td>Tax and accounting obligations</td>
+    </tr>
+    <tr>
+      <td>Fraud and abuse prevention logs</td>
+      <td>Up to 90 days</td>
+      <td>Security and legal compliance</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>After the retention period expires, this data will be securely deleted.</p>
+
+<hr>
+
+<h2>Questions?</h2>
+
+<p>If you have any questions about account deletion or your personal data, please contact us at <a href="mailto:vibe-reader-support@seekrtech.com">vibe-reader-support@seekrtech.com</a></p>
+
+</body>
+</html>
