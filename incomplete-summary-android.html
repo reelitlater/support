@@ -14,6 +14,8 @@
     --link: #6ba3ff;
     --code-bg: #2a2a2a;
     --code-text: #ff9b6b;
+    --note-bg: #222222;
+    --note-border: #3a3a3a;
   }
 
   * {
@@ -108,6 +110,16 @@
     text-decoration: underline;
   }
 
+  .note {
+    background-color: var(--note-bg);
+    border-left: 3px solid var(--note-border);
+    color: var(--text-muted);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+  }
+
   [dir="rtl"] .container {
     text-align: right;
   }
@@ -115,6 +127,10 @@
   [dir="rtl"] ul {
     padding-left: 0;
     padding-right: 24px;
+  }
+  [dir="rtl"] .note {
+    border-left: none;
+    border-right: 3px solid var(--note-border);
   }
 </style>
 <noscript><style>html.i18n-loading body { visibility: visible; }</style></noscript>
@@ -138,19 +154,17 @@
   </figure>
 
   <h2 data-i18n="fixHeading">How to fix it</h2>
-  <ol>
-    <li data-i18n="step1">Tap <strong>"Open Link"</strong> → go to the original page</li>
-    <li data-i18n="step2"><strong>Sign in</strong> or unlock the article</li>
-    <li data-i18n="step3">Tap the <strong>Share</strong> button ↑ → send it back to Vibe Reader</li>
-    <li data-i18n="step4">Done — you'll get a <strong>complete summary</strong></li>
-  </ol>
+  <p data-i18n="androidFixIntro">Android can't yet send articles back from the browser. For now, the easiest fix is to use the <strong>Vibe Reader Chrome extension</strong> on your desktop — articles you save there will sync back to your Android app.</p>
 
-  <figure>
-    <img src="share-back-steps.png" alt="Steps to open the original page, sign in, and share back to Vibe Reader" data-i18n="stepsAlt" data-i18n-attr="alt">
-  </figure>
+  <ol>
+    <li data-i18n="androidStep1">Install the <a href="https://chromewebstore.google.com/detail/vibe-reader/kbikkdaihbmodkofbcebllhklkjpmemn" target="_blank" rel="noopener">Vibe Reader Chrome extension</a></li>
+    <li data-i18n="androidStep2">On your desktop, open the article in Chrome and <strong>sign in</strong> or unlock it</li>
+    <li data-i18n="androidStep3">Click the <strong>Vibe Reader</strong> icon in the toolbar → the page is sent to your account</li>
+    <li data-i18n="androidStep4">Open Vibe Reader on Android — you'll see the <strong>complete summary</strong></li>
+  </ol>
 
 </div>
 <script src="i18n.js"></script>
-<script>applyI18n("ios");</script>
+<script>applyI18n("android");</script>
 </body>
 </html>
