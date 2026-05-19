@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0B1424">
+  <title>Vibe Reader · 創業小聚 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B1424;
+      --bg-elevated: #131F33;
+      --card: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #4FE0BD;
+      --accent-dim: rgba(79, 224, 189, 0.14);
+      --accent-glow: rgba(79, 224, 189, 0.35);
+      --text: #FFFFFF;
+      --text-2: rgba(255, 255, 255, 0.62);
+      --text-3: rgba(255, 255, 255, 0.38);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html { height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "PingFang TC", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100%;
+      position: relative;
+      overflow-x: hidden;
+      padding: 56px 22px 64px;
+      line-height: 1.5;
+    }
+
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      filter: blur(130px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::before {
+      background: radial-gradient(circle, var(--accent) 0%, transparent 65%);
+      top: -280px;
+      right: -260px;
+      opacity: 0.16;
+    }
+    body::after {
+      background: radial-gradient(circle, #4A6CFA 0%, transparent 65%);
+      bottom: -340px;
+      left: -240px;
+      opacity: 0.10;
+    }
+
+    .container {
+      max-width: 440px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ────────── HERO ────────── */
+    .hero {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .app-icon {
+      width: 78px;
+      height: 78px;
+      border-radius: 20px;
+      background: linear-gradient(160deg, #1F2A40 0%, #131C2F 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+      margin-bottom: 30px;
+    }
+
+    .app-icon .glyph {
+      width: 34px;
+      height: 34px;
+      color: #fff;
+    }
+    .app-icon .sparkle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+      filter: drop-shadow(0 0 6px var(--accent-glow));
+    }
+
+    h1.brand {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+      line-height: 1.05;
+    }
+
+    .slogan {
+      font-size: 17px;
+      line-height: 1.65;
+      font-weight: 500;
+      color: rgba(255,255,255,0.92);
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .accent { color: var(--accent); }
+
+    .welcome {
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--text-3);
+      letter-spacing: 0.02em;
+    }
+
+    /* ────────── CARDS ────────── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 26px 24px;
+      margin-bottom: 14px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .card-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .card-headline {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .card-sub {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    /* ────────── DOWNLOAD BUTTONS ────────── */
+    .download-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #FFFFFF;
+      color: #000;
+      padding: 12px 14px;
+      border-radius: 13px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .store-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
+    .store-btn:active { transform: translateY(0); }
+    .store-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+    .store-btn .text { text-align: left; line-height: 1.05; }
+    .store-btn .top { font-size: 9.5px; opacity: 0.65; font-weight: 500; letter-spacing: 0.02em; }
+    .store-btn .bot { font-size: 14px; font-weight: 700; margin-top: 2px; }
+
+    /* ────────── CODE BOX ────────── */
+    .code-box {
+      background: var(--accent-dim);
+      border: 1.5px dashed var(--accent);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .code-box .code {
+      font-family: 'Inter', "SF Mono", Menlo, monospace;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    .copy-btn {
+      background: var(--accent);
+      color: #08131F;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.2s ease;
+      font-family: inherit;
+      flex-shrink: 0;
+    }
+    .copy-btn:hover { transform: scale(1.04); }
+    .copy-btn.copied { background: #fff; }
+
+    .steps {
+      list-style: none;
+      counter-reset: step;
+    }
+    .steps li {
+      counter-increment: step;
+      padding: 13px 0 13px 38px;
+      position: relative;
+      font-size: 14px;
+      color: var(--text-2);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      line-height: 1.55;
+    }
+    .steps li:last-child { border-bottom: none; padding-bottom: 4px; }
+    .steps li:first-child { padding-top: 4px; }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .steps li:first-child::before { top: 2px; }
+    .steps li strong { color: var(--text); font-weight: 600; }
+
+    /* ────────── INTERVIEW CARD ────────── */
+    .interview .reward-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .interview ul.topics {
+      list-style: none;
+      margin: 18px 0 24px;
+    }
+    .interview ul.topics li {
+      padding: 7px 0 7px 22px;
+      font-size: 14px;
+      color: var(--text-2);
+      position: relative;
+      line-height: 1.55;
+    }
+    .interview ul.topics li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 16px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #08131F;
+      padding: 14px 20px;
+      border-radius: 13px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 14px rgba(79, 224, 189, 0.2);
+    }
+    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(79, 224, 189, 0.3); }
+    .cta-btn:active { transform: translateY(0); }
+    .cta-btn svg { width: 16px; height: 16px; }
+
+    /* ────────── FOOTER ────────── */
+    footer {
+      text-align: center;
+      margin-top: 44px;
+      color: var(--text-3);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    footer a { color: var(--text-2); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 1px; }
+    footer a:hover { color: var(--accent); border-color: var(--accent); }
+    footer .sig {
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--text-3);
+      letter-spacing: 0.04em;
+    }
+
+    /* ────────── TOAST ────────── */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #fff;
+      color: #08131F;
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 100;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    @media (max-width: 380px) {
+      h1.brand { font-size: 34px; }
+      .card-headline { font-size: 19px; }
+      .code-box .code { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="app-icon">
+        <svg class="glyph" viewBox="0 0 32 32" fill="none">
+          <path d="M5 13 Q 10 20, 14 16 T 23 19" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0 L13.5 9.5 L23 11 L13.5 12.5 L12 22 L10.5 12.5 L1 11 L10.5 9.5 Z"/>
+        </svg>
+      </div>
+      <h1 class="brand">Vibe Reader</h1>
+      <p class="slogan">用等捷運的時間，<br><span class="accent">真正讀懂</span>兩小時的深度訪談</p>
+      <p class="welcome">✦ 謝謝你今天來聽，這份禮物給你</p>
+    </section>
+
+    <!-- ===== DOWNLOAD ===== -->
+    <section class="card">
+      <div class="card-eyebrow">Step 1 · 下載</div>
+      <div class="card-headline">先把 Vibe Reader 裝進口袋</div>
+      <div class="download-buttons">
+        <a class="store-btn" href="#" id="appStoreLink" aria-label="App Store 下載">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div class="text">
+            <div class="top">Download on the</div>
+            <div class="bot">App Store</div>
+          </div>
+        </a>
+        <a class="store-btn" href="#" id="playStoreLink" aria-label="Google Play 下載">
+          <svg viewBox="0 0 24 24"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00C3FF"/><stop offset="1" stop-color="#005CFF"/></linearGradient><linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFE000"/><stop offset="1" stop-color="#FFBE00"/></linearGradient><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF3A44"/><stop offset="1" stop-color="#C31162"/></linearGradient><linearGradient id="g4" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#32A071"/><stop offset="1" stop-color="#2DA771"/></linearGradient></defs><path fill="url(#g1)" d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z"/><path fill="url(#g2)" d="M16.801 15.009l-2.302-2.302L17.698 9.51l2.807 1.626a1 1 0 010 1.73l-2.808 1.626-.896-1.483z"/><path fill="url(#g3)" d="M14.499 12.707l2.302 2.302-10.937 6.333 8.635-8.635z"/><path fill="url(#g4)" d="M5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.634z"/></svg>
+          <div class="text">
+            <div class="top">GET IT ON</div>
+            <div class="bot">Google Play</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== REDEEM ===== -->
+    <section class="card">
+      <div class="card-eyebrow">Step 2 · 兌換</div>
+      <div class="card-headline">Unlimited 首月半價<br>創業小聚限定</div>
+      <div class="code-box">
+        <span class="code" id="codeText">meetstartup</span>
+        <button class="copy-btn" id="copyBtn" type="button">複製</button>
+      </div>
+      <ol class="steps">
+        <li><strong>下載並註冊 Vibe Reader</strong>（用 Apple 或 Google 一鍵登入）</li>
+        <li>進入「設定」找到「<strong>兌換優惠</strong>」</li>
+        <li>貼上 <strong>meetstartup</strong>，立刻享 Unlimited 首月半價</li>
+      </ol>
+    </section>
+
+    <!-- ===== INTERVIEW ===== -->
+    <section class="card interview">
+      <div class="card-eyebrow">想跟我聊聊？</div>
+      <div class="card-headline">預約 20 分鐘訪談<br>再送 1 個月 Unlimited</div>
+      <span class="reward-pill">✦ 完成訪談即贈一個月 Unlimited 無限量方案</span>
+      <p class="card-sub">不嚴肅，就當聊聊。我想了解你三件事：</p>
+      <ul class="topics">
+        <li>平常怎麼用 Vibe Reader</li>
+        <li>哪裡卡住、或覺得可以更好</li>
+        <li>希望我們做但還沒做的功能</li>
+      </ul>
+      <a class="cta-btn" href="https://calendar.app.google/AiSsad1MwXRaoBCp7" target="_blank" rel="noopener">
+        預約 20 分鐘訪談
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8 H 13 M 9 4 L 13 8 L 9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>有任何想法或合作邀約，直接寫信給我</p>
+      <p style="margin-top: 6px;"><a href="mailto:shaohsuanpi@seekrtech.com">shaohsuanpi@seekrtech.com</a></p>
+      <p class="sig">Beef 畢夫 · Vibe Reader 共同創辦人</p>
+    </footer>
+
+  </div>
+
+  <div class="toast" id="toast">已複製兌換碼 ✓</div>
+
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const codeText = document.getElementById('codeText');
+    const toast = document.getElementById('toast');
+
+    copyBtn.addEventListener('click', async () => {
+      const code = codeText.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch (e) {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      copyBtn.textContent = '已複製 ✓';
+      copyBtn.classList.add('copied');
+      toast.classList.add('show');
+      setTimeout(() => {
+        copyBtn.textContent = '複製';
+        copyBtn.classList.remove('copied');
+        toast.classList.remove('show');
+      }, 1800);
+    });
+  </script>
+</body>
+</html>
