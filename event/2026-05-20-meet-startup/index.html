@@ -14,9 +14,9 @@
       --bg-elevated: #131F33;
       --card: rgba(255, 255, 255, 0.04);
       --card-border: rgba(255, 255, 255, 0.08);
-      --accent: #4FE0BD;
-      --accent-dim: rgba(79, 224, 189, 0.14);
-      --accent-glow: rgba(79, 224, 189, 0.35);
+      --accent: #48E6B9;
+      --accent-dim: rgba(72, 230, 185, 0.14);
+      --accent-glow: rgba(72, 230, 185, 0.35);
       --text: #FFFFFF;
       --text-2: rgba(255, 255, 255, 0.62);
       --text-3: rgba(255, 255, 255, 0.38);
@@ -75,32 +75,13 @@
     }
 
     .app-icon {
-      width: 78px;
-      height: 78px;
-      border-radius: 20px;
-      background: linear-gradient(160deg, #1F2A40 0%, #131C2F 100%);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+      width: 84px;
+      height: 84px;
+      display: inline-block;
       margin-bottom: 30px;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 24px rgba(72, 230, 185, 0.08));
     }
-
-    .app-icon .glyph {
-      width: 34px;
-      height: 34px;
-      color: #fff;
-    }
-    .app-icon .sparkle {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 14px;
-      height: 14px;
-      color: var(--accent);
-      filter: drop-shadow(0 0 6px var(--accent-glow));
-    }
+    .app-icon svg { width: 100%; height: 100%; display: block; }
 
     h1.brand {
       font-size: 40px;
@@ -308,9 +289,9 @@
       font-weight: 700;
       font-size: 15px;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 4px 14px rgba(79, 224, 189, 0.2);
+      box-shadow: 0 4px 14px rgba(72, 230, 185, 0.2);
     }
-    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(79, 224, 189, 0.3); }
+    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(72, 230, 185, 0.3); }
     .cta-btn:active { transform: translateY(0); }
     .cta-btn svg { width: 16px; height: 16px; }
 
@@ -362,11 +343,18 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="app-icon">
-        <svg class="glyph" viewBox="0 0 32 32" fill="none">
-          <path d="M5 13 Q 10 20, 14 16 T 23 19" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-        <svg class="sparkle" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0 L13.5 9.5 L23 11 L13.5 12.5 L12 22 L10.5 12.5 L1 11 L10.5 9.5 Z"/>
+        <svg viewBox="0 0 222 222" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Vibe Reader">
+          <rect x="1.5" y="1.5" width="219" height="219" rx="58.5" fill="white" fill-opacity="0.05"/>
+          <rect x="1.5" y="1.5" width="219" height="219" rx="58.5" stroke="url(#vrIconBorder)" stroke-width="3"/>
+          <path d="M152.62 62.039C158.06 59.7829 162.416 55.4801 164.71 49.9866C165.384 48.3743 167.592 48.3743 168.266 49.9866C170.562 55.4801 174.915 59.7803 180.356 62.039C181.873 62.6676 181.873 64.8982 180.356 65.5268C174.915 67.7829 170.56 72.0858 168.266 77.5793C167.592 79.1915 165.384 79.1915 164.71 77.5793C162.414 72.0858 158.06 67.7855 152.62 65.5268C151.103 64.8982 151.103 62.6676 152.62 62.039Z" fill="#48E6B9"/>
+          <path d="M38.9715 111.595H83.668C104.677 111.595 124.757 123.18 133.949 138.109C141.481 125.184 148.175 109.273 151.313 88.4414H178.615C173.802 118.379 164.785 140.161 146.02 164.497H114.623C108.145 150.597 92.4362 136.896 70.8508 136.977C59.7598 137.018 33.082 136.977 33.082 136.977L38.9715 111.595Z" fill="white"/>
+          <defs>
+            <linearGradient id="vrIconBorder" x1="208.268" y1="13.732" x2="11.4433" y2="209.412" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FCFCFC" stop-opacity="0.3"/>
+              <stop offset="0.5" stop-color="#C9C9C9" stop-opacity="0"/>
+              <stop offset="1" stop-color="#969696" stop-opacity="0.3"/>
+            </linearGradient>
+          </defs>
         </svg>
       </div>
       <h1 class="brand">Vibe Reader</h1>
