@@ -254,23 +254,19 @@
       margin: 18px 0 24px;
     }
     .interview ul.topics li {
-      padding: 7px 0 7px 22px;
+      padding: 7px 0;
       font-size: 14px;
       color: var(--text-2);
-      position: relative;
       line-height: 1.55;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
     }
     .interview ul.topics li::before {
       content: "✦";
-      position: absolute;
-      left: 0;
-      top: 7px;
-      font-size: 9px;
+      font-size: 11px;
       color: var(--accent);
-      background: none;
-      width: auto;
-      height: auto;
-      border-radius: 0;
+      flex-shrink: 0;
     }
 
     .cta-btn {
