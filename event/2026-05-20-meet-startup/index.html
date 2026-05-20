@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0B1424">
+  <meta name="theme-color" content="#02061d">
   <title>Vibe Reader · 創業小聚 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,7 +101,7 @@
     .card-eyebrow {
       font-size: 11px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.6);
       letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -120,6 +120,12 @@
       color: var(--text-2);
       line-height: 1.6;
       margin-bottom: 18px;
+    }
+
+    .card-divider {
+      border: none;
+      border-top: 1.5px dashed rgba(255, 255, 255, 0.15);
+      margin: 24px -24px;
     }
 
     /* ────────── DOWNLOAD BUTTONS ────────── */
@@ -162,11 +168,12 @@
       margin-bottom: 22px;
     }
     .code-box .code {
-      font-family: 'Inter', "SF Mono", Menlo, monospace;
-      font-size: 22px;
-      font-weight: 700;
+      font-family: ui-monospace, "SF Mono", "Noto Sans Mono", monospace;
+      font-size: 17px;
+      font-weight: 600;
       letter-spacing: 0.08em;
       color: var(--accent);
+      text-transform: uppercase;
     }
     .copy-btn {
       background: var(--accent);
@@ -207,8 +214,8 @@
       width: 26px;
       height: 26px;
       border-radius: 50%;
-      background: var(--accent-dim);
-      color: var(--accent);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.6);
       font-size: 12px;
       font-weight: 700;
       display: flex;
@@ -217,6 +224,16 @@
     }
     .steps li:first-child::before { top: 2px; }
     .steps li strong { color: var(--text); font-weight: 600; }
+    .steps li code {
+      font-family: "SF Mono", Menlo, "Courier New", monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 2px 7px;
+      border-radius: 5px;
+      letter-spacing: 0.04em;
+    }
 
     /* ────────── INTERVIEW CARD ────────── */
     .interview .reward-pill {
@@ -343,8 +360,8 @@
       <p class="welcome">✦ 謝謝你今天來聽，這份禮物給你</p>
     </section>
 
-    <!-- ===== DOWNLOAD ===== -->
-    <section class="card">
+    <!-- ===== DOWNLOAD + REDEEM ===== -->
+    <section class="card ticket-card">
       <div class="card-eyebrow">Step 1 · 下載</div>
       <div class="card-headline">先把 Vibe Reader 裝進口袋</div>
       <div class="download-buttons">
@@ -363,28 +380,27 @@
           </div>
         </a>
       </div>
-    </section>
 
-    <!-- ===== REDEEM ===== -->
-    <section class="card">
-      <div class="card-eyebrow">Step 2 · 兌換</div>
-      <div class="card-headline">Unlimited 首月半價<br>創業小聚限定</div>
+      <div class="card-divider"></div>
+
+      <div class="card-eyebrow">Step 2 · 兌換優惠</div>
+      <div class="card-headline">領取創業小聚限定優惠<br>Unlimited 首月半價</div>
       <div class="code-box">
         <span class="code" id="codeText">meetstartup</span>
         <button class="copy-btn" id="copyBtn" type="button">複製</button>
       </div>
       <ol class="steps">
-        <li><strong>下載並註冊 Vibe Reader</strong>（用 Apple 或 Google 一鍵登入）</li>
-        <li>進入「設定」找到「<strong>兌換優惠</strong>」</li>
-        <li>貼上 <strong>meetstartup</strong>，立刻享 Unlimited 首月半價</li>
+        <li>開啟 App，前往<strong>「收藏」</strong>頁面</li>
+        <li>點右上角<strong>個人頭像</strong>，選<strong>「兌換優惠」</strong></li>
+        <li>輸入 <strong>MEETSTARTUP</strong>，完成兌換</li>
       </ol>
     </section>
 
     <!-- ===== INTERVIEW ===== -->
     <section class="card interview">
-      <div class="card-eyebrow">想跟我聊聊？</div>
-      <div class="card-headline">預約 20 分鐘訪談<br>再送 1 個月 Unlimited</div>
-      <span class="reward-pill">✦ 完成訪談即贈一個月 Unlimited 無限量方案</span>
+      <div class="card-eyebrow">與創辦人聊聊</div>
+      <div class="card-headline">你的閱讀清單也堆積成山？<br>畢夫想與你聊聊怎麼幫助你</div>
+      <span class="reward-pill">完成訪談即贈一個月 Unlimited 無限量方案</span>
       <p class="card-sub">不嚴肅，就當聊聊。我想了解你三件事：</p>
       <ul class="topics">
         <li>平常怎麼用 Vibe Reader</li>
@@ -409,6 +425,38 @@
   <div class="toast" id="toast">已複製兌換碼 ✓</div>
 
   <script>
+    // Ticket-shape clip-path
+    function applyTicketClip() {
+      const card = document.querySelector('.ticket-card');
+      const divider = card && card.querySelector('.card-divider');
+      if (!card || !divider) return;
+
+      const r = 22;       // card border-radius
+      const notch = 14;   // notch radius
+      const W = card.offsetWidth;
+      const H = card.offsetHeight;
+      const divY = divider.offsetTop + divider.offsetHeight / 2;
+
+      // SVG path: clockwise outline of card with concave arcs at divider
+      const d = [
+        `M${r},0`,
+        `L${W - r},0`, `Q${W},0,${W},${r}`,
+        `L${W},${divY - notch}`,
+        `A${notch},${notch},0,0,0,${W},${divY + notch}`,   // right notch (concave)
+        `L${W},${H - r}`, `Q${W},${H},${W - r},${H}`,
+        `L${r},${H}`, `Q0,${H},0,${H - r}`,
+        `L0,${divY + notch}`,
+        `A${notch},${notch},0,0,0,0,${divY - notch}`,      // left notch (concave)
+        `L0,${r}`, `Q0,0,${r},0`,
+        `Z`
+      ].join(' ');
+
+      card.style.clipPath = `path('${d}')`;
+    }
+
+    applyTicketClip();
+    window.addEventListener('resize', applyTicketClip);
+
     const copyBtn = document.getElementById('copyBtn');
     const codeText = document.getElementById('codeText');
     const toast = document.getElementById('toast');
