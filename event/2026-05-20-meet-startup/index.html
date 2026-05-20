@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0B1424;
-      --bg-elevated: #131F33;
+      --bg: #02061d;
+      --bg-elevated: #0e2437;
       --card: rgba(255, 255, 255, 0.04);
       --card-border: rgba(255, 255, 255, 0.08);
       --accent: #48E6B9;
@@ -24,9 +24,11 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
-    html { height: 100%; }
+    html {
+      height: 100%;
+      background: #02061d radial-gradient(ellipse at top, #0e2437, #02061d) fixed;
+    }
     body {
-      background: var(--bg);
       color: var(--text);
       font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "PingFang TC", sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -38,29 +40,6 @@
       line-height: 1.5;
     }
 
-    body::before, body::after {
-      content: "";
-      position: fixed;
-      width: 700px;
-      height: 700px;
-      border-radius: 50%;
-      filter: blur(130px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    body::before {
-      background: radial-gradient(circle, var(--accent) 0%, transparent 65%);
-      top: -280px;
-      right: -260px;
-      opacity: 0.16;
-    }
-    body::after {
-      background: radial-gradient(circle, #4A6CFA 0%, transparent 65%);
-      bottom: -340px;
-      left: -240px;
-      opacity: 0.10;
-    }
-
     .container {
       max-width: 440px;
       margin: 0 auto;
@@ -70,16 +49,16 @@
 
     /* ────────── HERO ────────── */
     .hero {
-      text-align: center;
+      text-align: left;
       margin-bottom: 44px;
     }
 
     .app-icon {
       width: 84px;
       height: 84px;
-      display: inline-block;
-      margin-bottom: 30px;
-      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 24px rgba(72, 230, 185, 0.08));
+      display: block;
+      margin: 0 0 26px;
+      filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 28px rgba(72, 230, 185, 0.06));
     }
     .app-icon svg { width: 100%; height: 100%; display: block; }
 
@@ -96,8 +75,7 @@
       line-height: 1.65;
       font-weight: 500;
       color: rgba(255,255,255,0.92);
-      max-width: 320px;
-      margin: 0 auto;
+      max-width: 360px;
     }
 
     .accent { color: var(--accent); }
@@ -343,16 +321,19 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="app-icon">
-        <svg viewBox="0 0 222 222" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Vibe Reader">
-          <rect x="1.5" y="1.5" width="219" height="219" rx="58.5" fill="white" fill-opacity="0.05"/>
-          <rect x="1.5" y="1.5" width="219" height="219" rx="58.5" stroke="url(#vrIconBorder)" stroke-width="3"/>
-          <path d="M152.62 62.039C158.06 59.7829 162.416 55.4801 164.71 49.9866C165.384 48.3743 167.592 48.3743 168.266 49.9866C170.562 55.4801 174.915 59.7803 180.356 62.039C181.873 62.6676 181.873 64.8982 180.356 65.5268C174.915 67.7829 170.56 72.0858 168.266 77.5793C167.592 79.1915 165.384 79.1915 164.71 77.5793C162.414 72.0858 158.06 67.7855 152.62 65.5268C151.103 64.8982 151.103 62.6676 152.62 62.039Z" fill="#48E6B9"/>
-          <path d="M38.9715 111.595H83.668C104.677 111.595 124.757 123.18 133.949 138.109C141.481 125.184 148.175 109.273 151.313 88.4414H178.615C173.802 118.379 164.785 140.161 146.02 164.497H114.623C108.145 150.597 92.4362 136.896 70.8508 136.977C59.7598 137.018 33.082 136.977 33.082 136.977L38.9715 111.595Z" fill="white"/>
+        <svg viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Vibe Reader">
+          <rect width="1024" height="1024" rx="250" fill="url(#vrIconBg)"/>
+          <rect x="9" y="9" width="1006" height="1006" rx="241" stroke="url(#vrIconBorder)" stroke-opacity="0.1" stroke-width="18"/>
+          <path d="M703.98 286.159C729.073 275.752 749.164 255.905 759.744 230.566C762.856 223.129 773.036 223.129 776.148 230.566C786.74 255.905 806.819 275.74 831.912 286.159C838.91 289.058 838.91 299.347 831.912 302.247C806.819 312.653 786.728 332.501 776.148 357.84C773.036 365.277 762.856 365.277 759.744 357.84C749.153 332.501 729.073 312.665 703.98 302.247C696.982 299.347 696.982 289.058 703.98 286.159Z" fill="#48E6B9"/>
+          <path d="M179.764 513.831H385.931C482.838 513.831 575.46 567.271 617.86 636.131C652.602 576.513 683.479 503.12 697.952 407.033H823.887C801.686 545.125 760.094 645.595 673.538 757.848H528.716C498.834 693.731 426.376 630.536 326.811 630.909C275.652 631.095 152.598 630.909 152.598 630.909L179.764 513.831Z" fill="white"/>
           <defs>
-            <linearGradient id="vrIconBorder" x1="208.268" y1="13.732" x2="11.4433" y2="209.412" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FCFCFC" stop-opacity="0.3"/>
-              <stop offset="0.5" stop-color="#C9C9C9" stop-opacity="0"/>
-              <stop offset="1" stop-color="#969696" stop-opacity="0.3"/>
+            <radialGradient id="vrIconBg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1024 -115.674) rotate(128.067) scale(1660.76)">
+              <stop stop-color="#353A4C"/>
+              <stop offset="1" stop-color="#02061D"/>
+            </radialGradient>
+            <linearGradient id="vrIconBorder" x1="197" y1="815" x2="62.5" y2="973" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white"/>
+              <stop offset="1" stop-color="#999999"/>
             </linearGradient>
           </defs>
         </svg>
