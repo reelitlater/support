@@ -205,6 +205,36 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
+    .countdown-expired {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 18px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-2);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .countdown-expired svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+    .countdown.is-expired ~ .code-box {
+      opacity: 0.4;
+      filter: grayscale(0.6);
+    }
+    .countdown.is-expired ~ .code-box .copy-btn {
+      pointer-events: none;
+    }
+    .countdown.is-expired ~ .steps {
+      opacity: 0.4;
+    }
 
     /* ────────── CODE BOX ────────── */
     .code-box {
@@ -434,7 +464,7 @@
       <div class="card-eyebrow">Step 2 · 兌換優惠</div>
       <div class="card-headline">XChange 專屬優惠<br>Unlimited 首月半價</div>
 
-      <div class="countdown" id="countdown" data-end="2026-06-13T23:59:59+08:00">
+      <div class="countdown" id="countdown" data-end="2026-05-24T19:25:00+08:00">
         <div class="countdown-grid">
           <div class="cd-unit"><span class="cd-num" id="cd-days">07</span><span class="cd-lbl">Days</span></div>
           <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-lbl">Hours</span></div>
@@ -519,18 +549,31 @@
       const cd = document.getElementById('countdown');
       if (!cd) return;
       const end = new Date(cd.dataset.end).getTime();
+      const grid = cd.querySelector('.countdown-grid');
       const dEl = document.getElementById('cd-days');
       const hEl = document.getElementById('cd-hours');
       const mEl = document.getElementById('cd-mins');
       const sEl = document.getElementById('cd-secs');
       const pad = n => String(n).padStart(2, '0');
+      let timer = null;
+      let expired = false;
+
+      function showExpired() {
+        if (expired) return;
+        expired = true;
+        cd.classList.add('is-expired');
+        grid.outerHTML = '<div class="countdown-expired">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
+          '優惠兌換期間已結束' +
+          '</div>';
+        if (timer) clearInterval(timer);
+        applyTicketClip();
+      }
+
       function tick() {
         const diff = end - Date.now();
         if (diff <= 0) {
-          dEl.textContent = '00';
-          hEl.textContent = '00';
-          mEl.textContent = '00';
-          sEl.textContent = '00';
+          showExpired();
           return;
         }
         const days = Math.floor(diff / 86400000);
@@ -544,7 +587,7 @@
       }
       tick();
       applyTicketClip();
-      setInterval(tick, 1000);
+      timer = setInterval(tick, 1000);
     })();
 
     const copyBtn = document.getElementById('copyBtn');
