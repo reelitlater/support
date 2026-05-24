@@ -171,46 +171,39 @@
 
     /* ────────── COUNTDOWN ────────── */
     .countdown {
-      background: var(--accent-dim);
-      border: 1px solid rgba(72, 230, 185, 0.32);
-      border-radius: 14px;
-      padding: 14px 18px 12px;
-      margin-bottom: 14px;
-      text-align: center;
-    }
-    .countdown-label {
-      font-size: 10.5px;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 18px;
     }
     .countdown-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
+      gap: 8px;
     }
     .cd-unit {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3px;
+      justify-content: center;
+      gap: 4px;
+      padding: 12px 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.02);
     }
     .cd-num {
-      font-family: ui-monospace, "SF Mono", "Noto Sans Mono", monospace;
-      font-size: 22px;
-      font-weight: 700;
+      font-family: 'Inter', ui-monospace, "SF Mono", monospace;
+      font-size: 26px;
+      font-weight: 800;
       color: var(--text);
       font-variant-numeric: tabular-nums;
-      line-height: 1.1;
-      letter-spacing: 0.01em;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
     }
     .cd-lbl {
       font-size: 10px;
       color: var(--text-3);
-      font-weight: 500;
-      letter-spacing: 0.04em;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     /* ────────── CODE BOX ────────── */
@@ -442,12 +435,11 @@
       <div class="card-headline">XChange 專屬優惠<br>Unlimited 首月半價</div>
 
       <div class="countdown" id="countdown" data-end="2026-06-13T23:59:59+08:00">
-        <div class="countdown-label">兌換倒數</div>
         <div class="countdown-grid">
-          <div class="cd-unit"><span class="cd-num" id="cd-days">7</span><span class="cd-lbl">天</span></div>
-          <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-lbl">時</span></div>
-          <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-lbl">分</span></div>
-          <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-lbl">秒</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-days">07</span><span class="cd-lbl">Days</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-lbl">Hours</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-lbl">Min</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-lbl">Sec</span></div>
         </div>
       </div>
 
@@ -535,7 +527,7 @@
       function tick() {
         const diff = end - Date.now();
         if (diff <= 0) {
-          dEl.textContent = '0';
+          dEl.textContent = '00';
           hEl.textContent = '00';
           mEl.textContent = '00';
           sEl.textContent = '00';
@@ -545,7 +537,7 @@
         const hours = Math.floor((diff % 86400000) / 3600000);
         const mins = Math.floor((diff % 3600000) / 60000);
         const secs = Math.floor((diff % 60000) / 1000);
-        dEl.textContent = days;
+        dEl.textContent = pad(days);
         hEl.textContent = pad(hours);
         mEl.textContent = pad(mins);
         sEl.textContent = pad(secs);
