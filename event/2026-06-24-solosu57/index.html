@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#02061d">
+  <title>Vibe Reader · SoLo大乾哥 推薦</title>
+  <link rel="icon" type="image/svg+xml" href="https://support.vibe-reader.com/assets/favicon.svg">
+  <link rel="icon" type="image/png" href="https://support.vibe-reader.com/assets/og.png">
+  <meta property="og:title" content="Vibe Reader · SoLo大乾哥 推薦">
+  <meta property="og:description" content="用 3 分鐘，真正讀懂 1 小時的深度內容。SoLo大乾哥 推薦你的專屬優惠。">
+  <meta property="og:image" content="https://support.vibe-reader.com/assets/og.png">
+  <meta property="og:image:secure_url" content="https://support.vibe-reader.com/assets/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="970">
+  <meta property="og:image:height" content="643">
+  <meta property="og:url" content="https://support.vibe-reader.com/event/2026-06-24-solosu57/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vibe Reader">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://support.vibe-reader.com/assets/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #02061d;
+      --bg-elevated: #0e2437;
+      --card: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #48E6B9;
+      --accent-dim: rgba(72, 230, 185, 0.14);
+      --accent-glow: rgba(72, 230, 185, 0.35);
+      --text: #FFFFFF;
+      --text-2: rgba(255, 255, 255, 0.62);
+      --text-3: rgba(255, 255, 255, 0.38);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html {
+      height: 100%;
+      background: #02061d radial-gradient(ellipse at top right, #0e2437, #02061d) fixed;
+    }
+    body {
+      color: var(--text);
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "PingFang TC", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100%;
+      position: relative;
+      overflow-x: hidden;
+      padding: 56px 22px 64px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 440px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ────────── HERO ────────── */
+    .hero {
+      text-align: left;
+      margin-bottom: 44px;
+    }
+
+    .app-icon {
+      width: 84px;
+      height: 84px;
+      display: block;
+      margin: 0 0 26px;
+      filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 28px rgba(72, 230, 185, 0.06));
+    }
+    .app-icon svg { width: 100%; height: 100%; display: block; }
+
+    h1.brand {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+      line-height: 1.05;
+    }
+
+    .slogan {
+      font-size: 17px;
+      line-height: 1.65;
+      font-weight: 500;
+      color: rgba(255,255,255,0.92);
+      max-width: 360px;
+    }
+
+    .accent { color: var(--accent); }
+
+    .welcome {
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+
+    /* ────────── CARDS ────────── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 26px 24px;
+      margin-bottom: 14px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .card-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .card-headline {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    .card-sub {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .card-divider {
+      border: none;
+      border-top: 1.5px dashed rgba(255, 255, 255, 0.15);
+      margin: 24px -24px;
+    }
+
+    /* ────────── DOWNLOAD BUTTONS ────────── */
+    .download-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #FFFFFF;
+      color: #000;
+      padding: 12px 14px;
+      border-radius: 13px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .store-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
+    .store-btn:active { transform: translateY(0); }
+    .store-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+    .store-btn .text { text-align: left; line-height: 1.05; }
+    .store-btn .top { font-size: 9.5px; opacity: 0.65; font-weight: 500; letter-spacing: 0.02em; }
+    .store-btn .bot { font-size: 14px; font-weight: 700; margin-top: 2px; }
+
+    /* ────────── OFFER + CODE BOX ────────── */
+    .offer { margin-bottom: 4px; }
+    .offer-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+    .offer-label .accent { font-weight: 700; }
+    .offer-price {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+      margin-bottom: 12px;
+    }
+    .offer-price .was {
+      font-size: 14px;
+      color: var(--text-3);
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
+    .offer-price .now {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .offer-price .per {
+      font-size: 12px;
+      color: var(--text-3);
+    }
+    .code-box {
+      background: var(--accent-dim);
+      border: 1.5px dashed var(--accent);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .code-box .code {
+      font-family: ui-monospace, "SF Mono", "Noto Sans Mono", monospace;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    .copy-btn {
+      background: var(--accent);
+      color: #08131F;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.2s ease;
+      font-family: inherit;
+      flex-shrink: 0;
+    }
+    .copy-btn:hover { transform: scale(1.04); }
+    .copy-btn.copied { background: #fff; }
+
+    .steps {
+      list-style: none;
+      counter-reset: step;
+    }
+    .steps li {
+      counter-increment: step;
+      padding: 13px 0 13px 38px;
+      position: relative;
+      font-size: 14px;
+      color: var(--text-2);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      line-height: 1.55;
+    }
+    .steps li:last-child { border-bottom: none; padding-bottom: 4px; }
+    .steps li:first-child { padding-top: 4px; }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .steps li:first-child::before { top: 2px; }
+    .steps li strong { color: var(--text); font-weight: 600; }
+    .steps li code {
+      font-family: "SF Mono", Menlo, "Courier New", monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 2px 7px;
+      border-radius: 5px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ────────── INTERVIEW CARD ────────── */
+    .interview .reward-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .interview ul.topics {
+      list-style: none;
+      margin: 18px 0 24px;
+    }
+    .interview ul.topics li {
+      padding: 3px 0;
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.55;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .interview ul.topics li::before {
+      content: "✦";
+      font-size: 11px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #08131F;
+      padding: 14px 20px;
+      border-radius: 13px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 14px rgba(72, 230, 185, 0.2);
+    }
+    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(72, 230, 185, 0.3); }
+    .cta-btn:active { transform: translateY(0); }
+    .cta-btn svg { width: 16px; height: 16px; }
+
+    /* ────────── FOOTER ────────── */
+    footer {
+      text-align: center;
+      margin-top: 44px;
+      color: var(--text-3);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    footer a { color: var(--text-2); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 1px; }
+    footer a:hover { color: var(--accent); border-color: var(--accent); }
+    footer .sig {
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--text-3);
+      letter-spacing: 0.04em;
+    }
+
+    /* ────────── TOAST ────────── */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #fff;
+      color: #08131F;
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 100;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    @media (max-width: 380px) {
+      h1.brand { font-size: 34px; }
+      .card-headline { font-size: 19px; }
+      .code-box .code { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="app-icon">
+        <svg viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Vibe Reader">
+          <rect width="1024" height="1024" rx="250" fill="url(#vrIconBg)"/>
+          <rect x="9" y="9" width="1006" height="1006" rx="241" stroke="url(#vrIconBorder)" stroke-opacity="0.1" stroke-width="18"/>
+          <path d="M703.98 286.159C729.073 275.752 749.164 255.905 759.744 230.566C762.856 223.129 773.036 223.129 776.148 230.566C786.74 255.905 806.819 275.74 831.912 286.159C838.91 289.058 838.91 299.347 831.912 302.247C806.819 312.653 786.728 332.501 776.148 357.84C773.036 365.277 762.856 365.277 759.744 357.84C749.153 332.501 729.073 312.665 703.98 302.247C696.982 299.347 696.982 289.058 703.98 286.159Z" fill="#48E6B9"/>
+          <path d="M179.764 513.831H385.931C482.838 513.831 575.46 567.271 617.86 636.131C652.602 576.513 683.479 503.12 697.952 407.033H823.887C801.686 545.125 760.094 645.595 673.538 757.848H528.716C498.834 693.731 426.376 630.536 326.811 630.909C275.652 631.095 152.598 630.909 152.598 630.909L179.764 513.831Z" fill="white"/>
+          <defs>
+            <radialGradient id="vrIconBg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1024 -115.674) rotate(128.067) scale(1660.76)">
+              <stop stop-color="#353A4C"/>
+              <stop offset="1" stop-color="#02061D"/>
+            </radialGradient>
+            <linearGradient id="vrIconBorder" x1="197" y1="815" x2="62.5" y2="973" gradientUnits="userSpaceOnUse">
+              <stop stop-color="white"/>
+              <stop offset="1" stop-color="#999999"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 class="brand">Vibe Reader</h1>
+      <p class="slogan">用 3 分鐘，<br><span class="accent">真正讀懂</span> 1 小時的深度內容</p>
+      <p class="welcome">SoLo 大乾哥 專屬優惠</p>
+    </section>
+
+    <!-- ===== DOWNLOAD + REDEEM ===== -->
+    <section class="card ticket-card">
+      <div class="card-eyebrow">Step 1 · 下載</div>
+      <div class="card-headline">先把 Vibe Reader 裝進口袋</div>
+      <div class="download-buttons">
+        <a class="store-btn" href="https://apps.apple.com/app/apple-store/id6748338132?pt=690486&ct=solosu572026-06-24&mt=8" id="appStoreLink" aria-label="App Store 下載" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div class="text">
+            <div class="top">Download on the</div>
+            <div class="bot">App Store</div>
+          </div>
+        </a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.seekrlab.reelit&referrer=utm_source%3Dreferral%26utm_medium%3Dreferral%26utm_campaign%3Dsolosu572026-06-24" id="playStoreLink" aria-label="Google Play 下載" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00C3FF"/><stop offset="1" stop-color="#005CFF"/></linearGradient><linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFE000"/><stop offset="1" stop-color="#FFBE00"/></linearGradient><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF3A44"/><stop offset="1" stop-color="#C31162"/></linearGradient><linearGradient id="g4" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#32A071"/><stop offset="1" stop-color="#2DA771"/></linearGradient></defs><path fill="url(#g1)" d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92z"/><path fill="url(#g2)" d="M16.801 15.009l-2.302-2.302L17.698 9.51l2.807 1.626a1 1 0 010 1.73l-2.808 1.626-.896-1.483z"/><path fill="url(#g3)" d="M14.499 12.707l2.302 2.302-10.937 6.333 8.635-8.635z"/><path fill="url(#g4)" d="M5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.634z"/></svg>
+          <div class="text">
+            <div class="top">GET IT ON</div>
+            <div class="bot">Google Play</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="card-eyebrow">Step 2 · 兌換優惠</div>
+      <div class="card-headline">專屬優惠，兩種方案任選</div>
+
+      <div class="offer">
+        <div class="offer-label">Plus 年訂閱・第一年 <span class="accent">5 折</span></div>
+        <div class="offer-price"><span class="was">NT$1,490</span><span class="now">NT$790</span><span class="per">/ 年</span></div>
+        <div class="code-box">
+          <span class="code" data-code>SOLOPY</span>
+          <button class="copy-btn" type="button" data-copy>複製</button>
+        </div>
+      </div>
+
+      <div class="offer">
+        <div class="offer-label">Unlimited 月訂閱・第一個月 <span class="accent">5 折</span></div>
+        <div class="offer-price"><span class="was">NT$490</span><span class="now">NT$250</span><span class="per">/ 月</span></div>
+        <div class="code-box">
+          <span class="code" data-code>SOLOUM</span>
+          <button class="copy-btn" type="button" data-copy>複製</button>
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li>開啟 App，前往<strong>「收藏」</strong>頁面</li>
+        <li>點右上角<strong>個人頭像</strong>，選<strong>「兌換優惠」</strong></li>
+        <li>輸入對應方案的兌換碼，完成兌換</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <div class="toast" id="toast">已複製兌換碼 ✓</div>
+
+  <script>
+    // Ticket-shape clip-path
+    function applyTicketClip() {
+      const card = document.querySelector('.ticket-card');
+      const divider = card && card.querySelector('.card-divider');
+      if (!card || !divider) return;
+
+      const r = 22;       // card border-radius
+      const notch = 14;   // notch radius
+      const W = card.offsetWidth;
+      const H = card.offsetHeight;
+      const divY = divider.offsetTop + divider.offsetHeight / 2;
+
+      // SVG path: clockwise outline of card with concave arcs at divider
+      const d = [
+        `M${r},0`,
+        `L${W - r},0`, `Q${W},0,${W},${r}`,
+        `L${W},${divY - notch}`,
+        `A${notch},${notch},0,0,0,${W},${divY + notch}`,   // right notch (concave)
+        `L${W},${H - r}`, `Q${W},${H},${W - r},${H}`,
+        `L${r},${H}`, `Q0,${H},0,${H - r}`,
+        `L0,${divY + notch}`,
+        `A${notch},${notch},0,0,0,0,${divY - notch}`,      // left notch (concave)
+        `L0,${r}`, `Q0,0,${r},0`,
+        `Z`
+      ].join(' ');
+
+      card.style.clipPath = `path('${d}')`;
+    }
+
+    applyTicketClip();
+    window.addEventListener('resize', applyTicketClip);
+
+    const toast = document.getElementById('toast');
+
+    document.querySelectorAll('[data-copy]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const code = btn.closest('.code-box').querySelector('[data-code]').textContent.trim();
+        try {
+          await navigator.clipboard.writeText(code);
+        } catch (e) {
+          const ta = document.createElement('textarea');
+          ta.value = code;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        btn.textContent = '已複製 ✓';
+        btn.classList.add('copied');
+        toast.classList.add('show');
+        setTimeout(() => {
+          btn.textContent = '複製';
+          btn.classList.remove('copied');
+          toast.classList.remove('show');
+        }, 1800);
+      });
+    });
+  </script>
+</body>
+</html>
