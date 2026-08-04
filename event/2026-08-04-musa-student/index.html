@@ -540,6 +540,14 @@
         stepTwo: 'Tap the <strong>profile icon</strong> in the top-right corner, then choose <strong>Redeem Offer</strong> under <strong>Account Management</strong>.',
         stepThree: 'Enter <strong>MUSAPY50</strong> and confirm the <strong>Plus Yearly</strong> plan.',
         shotsEyebrow: 'A look inside',
+        shotsLocale: 'en',
+        shotsAlt: [
+          'Finally learn from your Watch Later list.',
+          'Learn fast. Miss nothing.',
+          'Ask. Reading alone is not enough.',
+          'Follow a channel. Summaries arrive on their own.',
+          'Save it on your computer. Read it on your phone.'
+        ],
         expiryText: 'Valid until November 4, 2026',
         footerText: 'Stuck somewhere? Email me directly.',
         signature: 'Shao-Hsuan Pi · Founder, Vibe Reader',
@@ -561,6 +569,14 @@
         stepTwo: 'Sağ üstteki <strong>profil simgesine</strong> dokun, <strong>Hesap Yönetimi</strong>’nde <strong>Teklifi Kullan (Redeem)</strong>’i seç.',
         stepThree: '<strong>MUSAPY50</strong> kodunu gir ve <strong>Plus Yıllık</strong> planı onayla.',
         shotsEyebrow: 'Uygulamaya göz at',
+        shotsLocale: 'tr-TR',
+        shotsAlt: [
+          '"Daha sonra izle" listen sonunda işe yarıyor.',
+          'Hızlıca öğren. Hiçbir şey kaçırma.',
+          'Sor. Sadece okuma yetmez.',
+          'Kanalını takip et. Özet otomatik gelsin.',
+          'Bilgisayarda kaydet. Telefonda oku.'
+        ],
         expiryText: '4 Kasım 2026 tarihine kadar geçerli',
         footerText: 'Takıldığın bir yer olursa bana doğrudan yaz.',
         signature: 'Shao-Hsuan Pi · Vibe Reader Kurucusu',
@@ -586,6 +602,12 @@
       TEXT_IDS.forEach((id) => {
         const el = document.getElementById(id);
         if (el) el.innerHTML = t[id];
+      });
+      document.querySelectorAll('.shots-scroller img').forEach((img, i) => {
+        const file = String(i + 1).padStart(2, '0') + '.webp';
+        const next = '/assets/screenshots/' + t.shotsLocale + '/' + file;
+        if (!img.src.endsWith(next)) img.src = next;
+        img.alt = t.shotsAlt[i] || '';
       });
       copyBtn.textContent = t.copy;
       toast.textContent = t.toast;
