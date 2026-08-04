@@ -308,27 +308,29 @@
     .steps li:first-child::before { top: 2px; }
     .steps li strong { color: var(--text); font-weight: 600; }
 
-    /* ────────── PERKS ────────── */
-    .perks ul.topics {
-      list-style: none;
-      margin: 2px 0 0;
-    }
-    .perks ul.topics li {
-      padding: 9px 0;
-      font-size: 14px;
-      color: var(--text-2);
-      line-height: 1.55;
+    /* ────────── SCREENSHOTS ────────── */
+    .shots { padding-left: 0; padding-right: 0; }
+    .shots .card-eyebrow { padding: 0 24px; margin-bottom: 16px; }
+    .shots-scroller {
       display: flex;
-      align-items: baseline;
-      gap: 11px;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 2px 24px 6px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
-    .perks ul.topics li::before {
-      content: "✦";
-      font-size: 11px;
-      color: var(--accent);
-      flex-shrink: 0;
+    .shots-scroller::-webkit-scrollbar { display: none; }
+    .shots-scroller img {
+      flex: 0 0 auto;
+      width: 208px;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      scroll-snap-align: center;
+      background: var(--bg-elevated);
     }
-    .perks ul.topics li strong { color: var(--text); font-weight: 600; }
 
     /* ────────── FOOTER ────────── */
     footer {
@@ -457,15 +459,16 @@
       </ol>
     </section>
 
-    <!-- ===== PERKS ===== -->
-    <section class="card perks">
-      <div class="card-eyebrow" id="perksEyebrow">Why Plus</div>
-      <div class="card-headline" id="perksHeadline">What changes when you study with it</div>
-      <ul class="topics">
-        <li id="perkOne"><span><strong>No more 5-summary limit.</strong> Enough quota to use it every day, not just on the readings you can afford to spend it on.</span></li>
-        <li id="perkTwo"><span><strong>Structured summaries for long material.</strong> Hour-long lectures and dense articles, broken into what actually matters.</span></li>
-        <li id="perkThree"><span><strong>Deeper, expanded summaries.</strong> Not just the gist, the detail you need to write about it afterwards.</span></li>
-      </ul>
+    <!-- ===== SCREENSHOTS ===== -->
+    <section class="card shots">
+      <div class="card-eyebrow" id="shotsEyebrow">A look inside</div>
+      <div class="shots-scroller">
+        <img src="shot-01.webp" width="760" height="1645" loading="lazy" decoding="async" alt="&quot;Daha sonra izle&quot; listen sonunda işe yarıyor.">
+        <img src="shot-02.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Hızlıca öğren. Hiçbir şey kaçırma.">
+        <img src="shot-03.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Sor. Sadece okuma yetmez.">
+        <img src="shot-04.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Kanalını takip et. Özet otomatik gelsin.">
+        <img src="shot-05.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Bilgisayarda kaydet. Telefonda oku.">
+      </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
@@ -528,11 +531,7 @@
         stepOne: 'Open the app and go to the <strong>Saved</strong> tab.',
         stepTwo: 'Tap the <strong>profile icon</strong> in the top-right corner, then choose <strong>Redeem Offer</strong> under <strong>Account Management</strong>.',
         stepThree: 'Enter <strong>MUSAPY50</strong> and confirm the <strong>Plus Yearly</strong> plan.',
-        perksEyebrow: 'Why Plus',
-        perksHeadline: 'What changes when you study with it',
-        perkOne: '<span><strong>No more 5-summary limit.</strong> Enough quota to use it every day, not just on the readings you can afford to spend it on.</span>',
-        perkTwo: '<span><strong>Structured summaries for long material.</strong> Hour-long lectures and dense articles, broken into what actually matters.</span>',
-        perkThree: '<span><strong>Deeper, expanded summaries.</strong> Not just the gist, the detail you need to write about it afterwards.</span>',
+        shotsEyebrow: 'A look inside',
         expiryText: 'Valid until November 4, 2026',
         footerText: 'Stuck somewhere? Email me directly.',
         signature: 'Shao-Hsuan Pi · Founder, Vibe Reader',
@@ -553,11 +552,7 @@
         stepOne: 'Vibe Reader’ı aç ve <strong>Kaydedildi</strong> sekmesine git.',
         stepTwo: 'Sağ üstteki <strong>profil simgesine</strong> dokun, <strong>Hesap Yönetimi</strong>’nde <strong>Teklifi Kullan (Redeem)</strong>’i seç.',
         stepThree: '<strong>MUSAPY50</strong> kodunu gir ve <strong>Plus Yıllık</strong> planı onayla.',
-        perksEyebrow: 'Neden Plus',
-        perksHeadline: 'Ders çalışırken neyi değiştiriyor',
-        perkOne: '<span><strong>5 özetlik sınır kalkıyor.</strong> Her gün kullanabileceğin kota, sadece kıyamadığın içeriklere değil.</span>',
-        perkTwo: '<span><strong>Uzun içerikler için yapılandırılmış özetler.</strong> Saatlerce süren videolar ve yoğun makaleler, gerçekten önemli olan kısımlara ayrılmış halde.</span>',
-        perkThree: '<span><strong>Daha derin, genişletilmiş özetler.</strong> Sadece ana fikir değil, sonrasında üzerine yazabileceğin detay da.</span>',
+        shotsEyebrow: 'Uygulamaya göz at',
         expiryText: '4 Kasım 2026 tarihine kadar geçerli',
         footerText: 'Takıldığın bir yer olursa bana doğrudan yaz.',
         signature: 'Shao-Hsuan Pi · Vibe Reader Kurucusu',
@@ -572,7 +567,7 @@
       'slogan', 'heroBadge', 'downloadEyebrow', 'downloadHeadline',
       'redeemEyebrow', 'redeemHeadline', 'priceRow', 'renewNote',
       'stepOne', 'stepTwo', 'stepThree',
-      'perksEyebrow', 'perksHeadline', 'perkOne', 'perkTwo', 'perkThree',
+      'shotsEyebrow',
       'expiryText', 'footerText', 'signature'
     ];
 
