@@ -309,27 +309,25 @@
     .steps li strong { color: var(--text); font-weight: 600; }
 
     /* ────────── SCREENSHOTS ────────── */
-    .shots { padding-left: 0; padding-right: 0; }
-    .shots .card-eyebrow { padding: 0 24px; margin-bottom: 16px; }
+    /* artwork is background-removed, so it sits straight on the page — no card, no frame */
+    .shots { margin: 32px 0 4px; }
+    .shots .card-eyebrow { margin-bottom: 12px; }
     .shots-scroller {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      padding: 2px 24px 6px;
+      padding-bottom: 6px;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
     }
     .shots-scroller::-webkit-scrollbar { display: none; }
     .shots-scroller img {
       flex: 0 0 auto;
-      width: 208px;
+      width: 232px;
       height: auto;
       display: block;
-      border-radius: 16px;
-      border: 1px solid var(--card-border);
       scroll-snap-align: center;
-      background: var(--bg-elevated);
     }
 
     /* ────────── FOOTER ────────── */
@@ -460,7 +458,7 @@
     </section>
 
     <!-- ===== SCREENSHOTS ===== -->
-    <section class="card shots">
+    <section class="shots">
       <div class="card-eyebrow" id="shotsEyebrow">A look inside</div>
       <div class="shots-scroller">
         <img src="/assets/screenshots/tr-TR/01.webp" width="760" height="1645" loading="lazy" decoding="async" alt="&quot;Daha sonra izle&quot; listen sonunda işe yarıyor.">
