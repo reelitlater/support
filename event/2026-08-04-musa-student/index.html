@@ -309,12 +309,12 @@
     .steps li strong { color: var(--text); font-weight: 600; }
 
     /* ────────── SCREENSHOTS ────────── */
-    /* artwork is background-removed, so it sits straight on the page — no card, no frame */
+    /* artwork is background-removed; each one sits in a card-style frame that clips it */
     .shots { margin: 32px 0 4px; }
     .shots .card-eyebrow { margin-bottom: 12px; }
     .shots-scroller {
       display: flex;
-      gap: 8px;
+      gap: 12px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       padding-bottom: 6px;
@@ -322,12 +322,22 @@
       scrollbar-width: none;
     }
     .shots-scroller::-webkit-scrollbar { display: none; }
-    .shots-scroller img {
+    .shots-scroller .shot {
       flex: 0 0 auto;
       width: 232px;
+      margin: 0;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      overflow: hidden;
+      scroll-snap-align: center;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .shots-scroller .shot img {
+      width: 100%;
       height: auto;
       display: block;
-      scroll-snap-align: center;
     }
 
     /* ────────── FOOTER ────────── */
@@ -461,11 +471,11 @@
     <section class="shots">
       <div class="card-eyebrow" id="shotsEyebrow">A look inside</div>
       <div class="shots-scroller">
-        <img src="/assets/screenshots/tr-TR/01.webp" width="760" height="1645" loading="lazy" decoding="async" alt="&quot;Daha sonra izle&quot; listen sonunda işe yarıyor.">
-        <img src="/assets/screenshots/tr-TR/02.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Hızlıca öğren. Hiçbir şey kaçırma.">
-        <img src="/assets/screenshots/tr-TR/03.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Sor. Sadece okuma yetmez.">
-        <img src="/assets/screenshots/tr-TR/04.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Kanalını takip et. Özet otomatik gelsin.">
-        <img src="/assets/screenshots/tr-TR/05.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Bilgisayarda kaydet. Telefonda oku.">
+        <figure class="shot"><img src="/assets/screenshots/tr-TR/01.webp" width="760" height="1645" loading="lazy" decoding="async" alt="&quot;Daha sonra izle&quot; listen sonunda işe yarıyor."></figure>
+        <figure class="shot"><img src="/assets/screenshots/tr-TR/02.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Hızlıca öğren. Hiçbir şey kaçırma."></figure>
+        <figure class="shot"><img src="/assets/screenshots/tr-TR/03.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Sor. Sadece okuma yetmez."></figure>
+        <figure class="shot"><img src="/assets/screenshots/tr-TR/04.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Kanalını takip et. Özet otomatik gelsin."></figure>
+        <figure class="shot"><img src="/assets/screenshots/tr-TR/05.webp" width="760" height="1645" loading="lazy" decoding="async" alt="Bilgisayarda kaydet. Telefonda oku."></figure>
       </div>
     </section>
 
