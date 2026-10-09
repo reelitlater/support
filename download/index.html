@@ -43,7 +43,9 @@
     .phone.l { left:2%; transform:translateY(-50%) scale(.86); opacity:.85; }
     .phone.r { right:2%; transform:translateY(-50%) scale(.86); opacity:.85; }
     .phone.c { left:28%; transform:translateY(-50%); z-index:2; border-color:#4a4f5e; }
-    footer { text-align:center; color:rgba(255,255,255,.3); font-size:12px; padding:0 20px 32px; }
+    footer { text-align:center; color:rgba(255,255,255,.3); font-size:12px; padding:0 20px 32px; line-height:1.8; }
+    footer a { color:rgba(255,255,255,.5); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
     @media (min-width:900px) {
       .wrap { grid-template-columns:1fr 1.05fr; min-height:100vh; padding:40px 40px; }
       .phones { height:600px; }
@@ -89,6 +91,6 @@
       <div class="phone r"><img src="s3.webp" alt="對照原片畫面" loading="lazy"></div>
     </section>
   </main>
-  <footer>© 3PM Fizz Co., Ltd.</footer>
+  <footer>© 3PM Fizz Co., Ltd.<br><a href="mailto:shaohsuanpi@3pmfizz.com">shaohsuanpi@3pmfizz.com</a></footer>
 </body>
 </html>
