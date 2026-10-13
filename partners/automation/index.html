@@ -163,6 +163,17 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:v
 .og-desc{font-size:14px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .og-go{margin-top:auto;font-weight:700;color:var(--mint);font-size:14px}
 </style>
+<style>
+.modes button{color:var(--fg);background:#1A2045;border:1px solid #3A4170;box-shadow:0 2px 0 #0A0E28;transition:transform .12s,background .15s,border-color .15s,box-shadow .12s;position:relative;padding-right:34px}
+.modes button::after{content:"›";position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--muted);transition:color .15s}
+.modes button:hover{background:#242B5A;border-color:var(--mint);transform:translateY(-1px)}
+.modes button:hover::after{color:var(--mint)}
+.modes button:active{transform:translateY(1px);box-shadow:none}
+.modes button[aria-selected="true"]{background:var(--mint);border-color:var(--mint);color:var(--mint-ink);box-shadow:0 2px 0 #2bb38f}
+.modes button[aria-selected="true"] small{color:rgba(2,6,29,.72)}
+.modes button[aria-selected="true"]::after{content:"✓";font-size:15px;color:var(--mint-ink)}
+.modes-hint{font-size:13px;color:var(--muted);margin:0 0 6px}
+</style>
 </head><body>
 
 <div class="wrap">
@@ -283,7 +294,7 @@ const PIPES={
 const LABEL={auto:'系統自動',opt:'人可介入',human:'人必須做'};
 document.querySelectorAll('.pipe').forEach(box=>{
   const P=PIPES[box.dataset.pipe];
-  box.innerHTML='<div class="modes" role="tablist">'+P.modes.map(([k,t,s],i)=>'<button role="tab" data-mode="'+k+'" aria-selected="'+(i===0)+'">'+t+'<small>'+s+'</small></button>').join('')+'</div><p class="mode-sum"></p><ol class="stages"></ol><div class="legend"><span class="tag auto">系統自動</span><span class="tag opt">人可介入</span><span class="tag human">人必須做</span><span>第一個模式是目前運作中的設定，其他把關點可依需求開啟或加上</span></div>';
+  box.innerHTML='<p class="modes-hint">點選切換把關程度 👇</p><div class="modes" role="tablist">'+P.modes.map(([k,t,s],i)=>'<button role="tab" data-mode="'+k+'" aria-selected="'+(i===0)+'">'+t+'<small>'+s+'</small></button>').join('')+'</div><p class="mode-sum"></p><ol class="stages"></ol><div class="legend"><span class="tag auto">系統自動</span><span class="tag opt">人可介入</span><span class="tag human">人必須做</span><span>第一個模式是目前運作中的設定，其他把關點可依需求開啟或加上</span></div>';
   const render=mode=>{
     box.querySelectorAll('.modes button').forEach(b=>b.setAttribute('aria-selected',b.dataset.mode===mode));
     const n=P.stages.filter(s=>s.m[mode][0]!=='auto').length;
