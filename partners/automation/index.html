@@ -175,8 +175,16 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:v
 .modes-hint{font-size:13px;color:var(--muted);margin:0 0 6px}
 </style>
 <style>footer p{margin:0 0 8px}footer .legal{font-size:13px;line-height:1.7}footer a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}footer a:hover{color:var(--mint)}</style>
+<style>
+.topbar{max-width:1080px;margin:0 auto;padding:18px 0 0}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.brand img{width:32px;height:32px;border-radius:8px;display:block}
+.brand:hover span,.brand:focus-visible span{color:var(--mint)}
+.brand:focus-visible{outline:2px solid var(--mint);outline-offset:4px;border-radius:8px}
+</style>
 </head><body>
 
+<header class="topbar"><a class="brand" href="https://support.vibe-reader.com/download/?s=partners" aria-label="下載 Vibe Reader"><img src="https://support.vibe-reader.com/assets/favicon.svg" alt="" width="32" height="32"><span>Vibe Reader</span></a></header>
 <div class="wrap">
   <nav class="rail" aria-label="目錄">
     <p>目錄</p>
