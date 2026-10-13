@@ -205,7 +205,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:v
       <p class="eyebrow">Vibe Reader · Social Automation</p>
       <h1>用 AI agent 自動經營 <em>Threads 與 IG</em> 的日常內容</h1>
       <p class="lede">Vibe Reader 是把長影片、Podcast、長文章整理成幾分鐘讀完的重點卡片的 App。我們用兩條自建的 AI agent 管線經營社群：<b>發文</b>主動產出串文與短影音；<b>海巡</b>到別人的貼文底下用品牌帳號回覆。發文在 Threads 與 Instagram 的中英文帳號、海巡在 Threads 上，每天運作。</p>
-      <p class="cadence">目前每天在 Threads 中、英文帳號各發 4 則（2 則串文、2 支短影音），Instagram 中、英文帳號各發 2 支 Reels，並搭配海巡回覆；Threads 上的每則貼文與回覆，發出 24 小時後自動回報成效。</p>
+      <p class="cadence">目前每天在 Threads 中、英文帳號各發 4 則（2 則串文、2 支短影音），Instagram 中、英文帳號各發 2 支 Reels，並搭配海巡回覆；每則貼文、短影音與回覆，發出 24 小時後自動回報成效。</p>
     </header>
 
     <section id="post">
@@ -229,7 +229,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:v
         <li><b>下指令</b>：丟一個連結、或直接跟 AI 助理說要做什麼。</li>
         <li><b>收通知</b>：每則內容發出後回報，有狀況會說明原因。</li>
         <li><b>核准</b>：需要把關時，草稿送到頻道，按一下就發。</li>
-        <li><b>摘要與成效</b>：每天一則總結，Threads 貼文與回覆的成效也會自動回到頻道。</li>
+        <li><b>摘要與成效</b>：每天一則總結，每則內容的成效也會自動回到頻道。</li>
       </ol>
     </section>
 
@@ -286,7 +286,7 @@ const PIPES={
   stages:[
    {t:'內容企劃',d:'從素材出發發想發文主題，寫成串文與影片對白。長影片、Podcast、文章由 Vibe Reader 先消化成重點，企劃才有依據。',m:{auto:['auto','系統自動企劃與撰寫'],key:['opt','人可指定素材或主題'],full:['human','人挑主題，文案核准才發']}},
    {t:'配音與畫面',d:'AI 配音與動態畫面，片尾接真實的產品操作。',m:{auto:['auto','系統自動'],key:['auto','系統自動'],full:['auto','系統自動']}},
-   {t:'品質檢查',d:'自動檢查技術問題，並由 AI 以目標觀眾角度審片。',m:{auto:['auto','自動標記，照常發布'],key:['opt','有疑慮就擋下，人確認'],full:['human','每支人看過才發']}},
+   {t:'品質檢查',d:'自動檢查技術問題，並由 AI 以目標觀眾角度審片。',m:{auto:['auto','自動標記，團隊事後檢查'],key:['opt','有疑慮就擋下，人確認'],full:['human','每支人看過才發']}},
    {t:'排程發布',d:'依各帳號時段發到 Threads 與 IG Reels。',m:{auto:['auto','自動發布並回報'],key:['auto','自動發布並回報'],full:['human','人核准才發']}}
   ]},
  patrol:{
